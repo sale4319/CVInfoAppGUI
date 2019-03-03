@@ -37,8 +37,14 @@ public class Menu extends javax.swing.JFrame {
         appInfoButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CV Application");
         setAlwaysOnTop(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.GridLayout(6, 1, 1, 0));
 
         personalInfoButton.setText("Personal Info");
@@ -65,7 +71,7 @@ public class Menu extends javax.swing.JFrame {
         });
         getContentPane().add(educationButton);
 
-        skillComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Communication skills", "Organizational/Menagerial skills", "Speciality knowledge", "PC skills", "Programming knowledge" }));
+        skillComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Communication skills", "Organizational/Menagerial skills", "Speciality knowledge", "Personal traits", "PC skills", "Programming knowledge" }));
         skillComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 skillComboBoxActionPerformed(evt);
@@ -123,9 +129,10 @@ public class Menu extends javax.swing.JFrame {
                     + "Employee evaluations/Monitoring/Correcting/Training employees/Task prioritization", "ORGANISATIONAL/MANAGERIAL SKILLS", JOptionPane.INFORMATION_MESSAGE);
         }
         if (skillComboBox.getSelectedItem().toString() == "Speciality knowledge") {
-            JOptionPane.showMessageDialog(this, "Accounting/Finance/Management\n"
-                    + "PERSONAL TRAITS:\n"
-                    + "Precise/Hardworking/Responsible/Reliable/Determined/Great pressure handling", "SPECIALITY KNOWLEDGE", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Accounting/Finance/Management\n", "SPECIALITY KNOWLEDGE", JOptionPane.INFORMATION_MESSAGE);
+        }
+        if (skillComboBox.getSelectedItem().toString() == "Personal traits") {
+            JOptionPane.showMessageDialog(this, "Precise/Hardworking/Responsible/Reliable/Determined/Great pressure handling", "PERSONAL TRAITS", JOptionPane.INFORMATION_MESSAGE);
         }
         if (skillComboBox.getSelectedItem().toString() == "PC skills") {
             JOptionPane.showMessageDialog(this, "Expert knowledge of Microsoft Office(Office Libre)\n"
@@ -153,6 +160,10 @@ public class Menu extends javax.swing.JFrame {
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         this.dispose();
     }//GEN-LAST:event_closeButtonActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
