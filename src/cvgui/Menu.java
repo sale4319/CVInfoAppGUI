@@ -5,6 +5,7 @@
  */
 package cvgui;
 
+import java.awt.Frame;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,8 +18,13 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Menu() {
+        setUndecorated(true);
+        pack();
+        setExtendedState(Frame.MAXIMIZED_BOTH);
+        setVisible(true);
         initComponents();
         setLocationRelativeTo(null);
+
     }
 
     /**
@@ -196,6 +202,7 @@ public class Menu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menu().setVisible(true);
+
             }
         });
     }
@@ -208,4 +215,5 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> skillComboBox;
     private javax.swing.JButton workExperienceButton;
     // End of variables declaration//GEN-END:variables
+
 }
