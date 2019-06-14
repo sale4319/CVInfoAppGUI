@@ -1,2 +1,2 @@
 # CVInfoAppGUI
-Preview: https://studio.youtube.com/video/Va2NYpBSKNk/edit
+Preview: https://www.youtube.com/watch?v=Va2NYpBSKNk
